@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Program CRUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>University Program</h2>
+
+    <input type="number" id="id" placeholder="Program ID">
+    <input type="text" id="name" placeholder="Program Name">
+
+    <select id="dept">
+        <option value="">Select Department</option>
+        <option value="IT">IT</option>
+        <option value="Management">Management</option>
+        <option value="Science">Science</option>
+    </select>
+
+    <label>Duration: <span id="durationValue">3</span> Years</label>
+    <input type="range" id="duration" min="1" max="5" value="3">
+
+    <input type="number" id="fees" placeholder="Fees">
+    <input type="date" id="startDate">
+
+    <label>Program Type:</label><br>
+    <input type="radio" name="type" value="Undergraduate"> Undergraduate
+    <input type="radio" name="type" value="Postgraduate"> Postgraduate
+
+    <div class="btn-group">
+        <button class="add" onclick="addData()">Add</button>
+        <button class="update" onclick="updateData()">Update</button>
+        <button class="delete" onclick="deleteData()">Delete</button>
+    </div>
+
+    <!-- 🔍 Search -->
+    <input type="text" id="search" placeholder="Search Program..." onkeyup="searchData()">
+
+    <table>
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">ID</th>
+                <th onclick="sortTable(1)">Name</th>
+                <th onclick="sortTable(2)">Dept</th>
+                <th onclick="sortTable(3)">Duration</th>
+                <th onclick="sortTable(4)">Fees</th>
+                <th onclick="sortTable(5)">Start Date</th>
+                <th onclick="sortTable(6)">Type</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script src="schema.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
